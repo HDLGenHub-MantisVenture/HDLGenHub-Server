@@ -1,12 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/HDLGenHubLocalDb", {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -14,6 +15,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/HDLGenHubLocalDb", {
 const UserRouter = require("./routes/User");
 app.use("/user", UserRouter);
 
-app.listen(4000, () => {
-  console.log("Server is running");
+PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log("HDLGenHub server is running on the PORT:", PORT);
 });

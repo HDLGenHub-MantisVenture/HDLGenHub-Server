@@ -12,7 +12,7 @@ const PadSchema = new Schema({
   },
   component: {
     type: Schema.Types.ObjectId,
-    ref: "Component",
+    ref: "Assignment" || "CodingTask" || "Document" || "Quiz" || "Video",
   },
 });
 

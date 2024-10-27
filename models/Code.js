@@ -10,6 +10,10 @@ const CodeShema = new Schema({
     type: String,
     require: true,
   },
+  compiled: {
+    type: String,
+    require: false,
+  },
 });
 
 const Code = mongoose.model("Code", CodeShema);

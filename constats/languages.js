@@ -1,4 +1,4 @@
-const Languages = [
+export const Languages = [
   {
     language: "Python",
     tag: "PYTHON",

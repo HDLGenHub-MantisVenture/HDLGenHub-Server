@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/User");
+const User = require("../models/user/User");
 
 router.get("/", async (req, res) => {
   try {
@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-router.get("/:id")
+router.get("/:id");
 
 router.post("/", async (req, res) => {
   const { name, email, age } = req.body;

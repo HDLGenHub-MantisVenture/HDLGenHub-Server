@@ -14,6 +14,10 @@ const PadSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Assignment" || "CodingTask" || "Document" || "Quiz" || "Video",
   },
+  wordpad: {
+    type: Schema.Types.ObjectId,
+    ref: "Wordpad",
+  },
 });
 
 const Pad = mongoose.model("Pad", PadSchema);

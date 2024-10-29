@@ -10,6 +10,10 @@ const AssignmentSchema = new Schema({
     type: String,
     require: true,
   },
+  wordpad: {
+    type: Schema.Types.ObjectId,
+    require: false,
+  },
 });
 
 const Assignment = mongoose.model("Assignment", AssignmentSchema);
